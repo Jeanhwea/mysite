@@ -47,3 +47,4 @@ class ChoiceAdmin(admin.ModelAdmin):
         'choice_text',
         'votes',
     ]
+
