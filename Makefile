@@ -26,6 +26,9 @@ check:
 test:
 	$(MANAGE) test
 
+collectstatic:
+	$(MANAGE) collectstatic
+
 server:
 	$(MANAGE) runserver
 
@@ -38,3 +41,5 @@ makemigrations:
 migrate:
 	$(MANAGE) migrate
 
+upload:
+	rsync -rva -e ssh --delete --exclude='mysite/settings.py' --exclude='*.pyc' . ubuntu@aws:/home/ubuntu/codes/mysite
