@@ -2,7 +2,21 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Person, Group, Membership
+from .models import Member, Person, Group, Membership
+
+@admin.register(Member)
+class MemberAdmin(admin.ModelAdmin):
+    fields = [
+        'first_name',
+        'last_name',
+        'birth_date',
+    ]
+    list_display = (
+        'full_name',
+        'first_name',
+        'last_name',
+        'birth_date',
+    )
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
@@ -37,3 +51,4 @@ class MembershipAdmin(admin.ModelAdmin):
         'group',
         'joined_at',
     )
+
