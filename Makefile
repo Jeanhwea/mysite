@@ -42,4 +42,4 @@ migrate:
 	$(MANAGE) migrate
 
 upload:
-	rsync -rva -e ssh --delete --exclude='mysite/settings.py' --exclude='*.pyc' . ubuntu@aws:/home/ubuntu/codes/mysite
+	rsync -rva -e ssh --delete --exclude='.git' --exclude='mysite/settings.py' --exclude='*.pyc' . ubuntu@aws:/home/ubuntu/codes/mysite
